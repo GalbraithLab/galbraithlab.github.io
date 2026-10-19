@@ -106,20 +106,21 @@ p { margin: 0 0 1em; }
 /* ---------- Cards / grids ---------- */
 .grid { display: grid; gap: 24px; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
 
-/* Play tile */
+/* Outreach card */
+.outreach-card { display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: center; }
+@media (max-width: 700px) { .outreach-card { grid-template-columns: 1fr; } }
 a.play-tile { text-decoration: none; display: block; }
 .play-tile-box {
+  aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden;
   background: linear-gradient(135deg, #1a2e1a 0%, #0b1119 100%);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: opacity .15s;
 }
-a.play-tile:hover .play-tile-box { opacity: .88; }
+.outreach-tile { aspect-ratio: unset; height: 160px; }
+a.play-tile:hover .play-tile-box { opacity: .85; }
 .play-tile-inner { text-align: center; }
-.play-tile-img { width: 72px; height: 72px; margin-bottom: 12px; display: block; margin: 0 auto 12px; }
 .play-tile-btn {
   display: inline-block; background: var(--accent); color: #fff;
   font-weight: 700; font-size: 1.1rem; padding: 10px 24px; border-radius: 8px;
